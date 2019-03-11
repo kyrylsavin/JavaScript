@@ -13,7 +13,7 @@ console.log('Seconds: ' + secondsCurrent);
 var str = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, at.";
 var arr = [];
 for (var i = 0; i < str.length; i++) {
-	if (str[i] == 'a') { 
+	if (str[i].toLowerCase() == 'a') { 
 		arr.push(i);
 	}
 }
