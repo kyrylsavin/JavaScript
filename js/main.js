@@ -1,13 +1,11 @@
 //task 1
 var seconds = 234245645335;
 
-var hoursSeconds = (seconds - seconds%3600);
-var secondsCurrent = (seconds - hoursSeconds)%60;
-var minutesSeconds = (seconds - hoursSeconds - secondsCurrent)
+var hours = Math.floor(seconds/3600);
+var minutes = Math.floor((seconds - hours*3600)/60);
+var seconds = (seconds - hours*3600 )%60;
 
-console.log('Hours: ' + hoursSeconds/3600);
-console.log('Minutes: ' + minutesSeconds/60);
-console.log('Seconds: ' + secondsCurrent);
+console.log(`Full hours: ${hours}; Minutes from last hour: ${minutes}; seconds from last hour: ${seconds}`);
 
 //task 2
 var str = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, at.";
