@@ -1,18 +1,21 @@
-//task 1
-var seconds = 234245645335;
+var button = document.getElementById("submit_button");
 
-var hours = Math.floor(seconds/3600);
-var minutes = Math.floor((seconds - hours*3600)/60);
-var seconds = (seconds - hours*3600 )%60;
-
-console.log(`Full hours: ${hours}; Minutes from last hour: ${minutes}; seconds from last hour: ${seconds}`);
-
-//task 2
-var str = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, at.";
-var arr = [];
-for (var i = 0; i < str.length; i++) {
-	if (str[i].toLowerCase() == 'a') { 
-		arr.push(i);
+button.addEventListener("click", function(){
+	var data = new Object();
+	var input = document.getElementsByTagName("input");
+	
+	for (i in input) {
+		try {
+			if (input[i].getAttribute("type") == "radio" || 
+				input[i].getAttribute("type") == "checkbox" )
+				data[input[i].getAttribute("value")] = input[i].checked;
+			else {
+				data[input[i].getAttribute("name")] = input[i].value;
+			}
+		}
+		catch (e) {
+			break;
+		}
 	}
-}
-console.log(arr); 
+	console.log(data);
+});
