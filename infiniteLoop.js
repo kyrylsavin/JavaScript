@@ -2,7 +2,7 @@ let counter = 0;
 
 while (true) {
 	try {
-		if (counter > 2000) throw "loop overflow";
+		if (counter > 10000) throw "loop overflow";
 	}
 	catch (e) {
 		console.log(e);	
