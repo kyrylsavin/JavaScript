@@ -1,13 +1,19 @@
-let counter = 0;
+var i = 0;
 
 while (true) {
 	try {
-		if (counter > 10000) throw "loop overflow";
-	}
+		if (i < 2000) {
+			console.log(i);
+			i+=1;
+		} else {
+			throw SyntaxError("infinite loop");
+		}
+	} 
 	catch (e) {
-		console.log(e);	
-		break;
-	}
-	console.log(counter);
-	counter++;
+		if (e instanceof SyntaxError) {
+			console.log(`Error name: ${e.message}`);
+			break;
+		}
+	} 
 }
+		
