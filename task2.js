@@ -10,6 +10,7 @@ const MORZE = {".-":"А", "-...":"Б", ".--":"В", "--.":"Г", "-..":"Д", ".":"
 	       "-..-":"Ь", "..--":"Ю", "Я":".-.-"};
 
 function morzeDecode(text) {
+	text = text.replace(/[\s\s+]/g, '');
 	if (arguments.length == 0 || arguments.length > 1) throw "Разрешается один параметр в виде строки";
 	let arr = text.split(" "), result = "";			
 	for (i in arr) {
